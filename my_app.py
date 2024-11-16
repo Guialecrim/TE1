@@ -1,5 +1,5 @@
 # write here a code for the main app and the first screen
-from PyQt5.QCore import Qt
+from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import *
 from second_win import *
 from inst import *
@@ -22,6 +22,7 @@ class MainWin(QWidget):
         self.move(win_x, win_y)
         
     def initUI(self):
+        self.qlinetext = QLineEdit('Dados')##### RETIRAR TESTE-----------------------------------------------------------------
         self.hello_text = QLabel(txt_hello)#criar etiqueta
         self.instruction = QLabel(txt_instruction)#criar etiqueta
         self.button = QPushButton(txt_next)#criar botao
@@ -29,12 +30,13 @@ class MainWin(QWidget):
         self.layout.addWidget(self.hello_text, alignment = Qt.AlignLeft)#add a self widget.hello_text on self.layout
         self.layout.addWidget(self.instruction, alignment = Qt.AlignLeft)#add the self.instruction widget to self.layout
         self.layout.addWidget(self.button, alignment = Qt.AlignCenter)#add a self widget.button on self.layout
+        self.layout.addWidget(self.qlinetext, alignment = Qt.AlignCenter)###### RETIRAR TESTE----------------------------------------
         self.setLayout(self.layout) # faz o layout aparecer
         
     def connects(self):
         self.button.clicked.connect(self.next_click)
 
-    def next_clicked(self):
+    def next_click(self):
         self.hide()
         self.tw = TestWin()
         
