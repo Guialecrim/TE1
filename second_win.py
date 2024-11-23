@@ -22,6 +22,8 @@ class TestWin(QWidget):
         # add widgets to self.l_line ------ self.l_line.addWidget(self.btn1)
         # add widgets to self.r_line ------ self.r_line.addWidget(self.timer)
         line_name = QLineEdit('Widget text')
+        self.qlinetext = QLineEdit('Dados')
+        self.l_line.addWidget(self.qlinetext, alignment = Qt.AlignLeft)
         
         self.h_line.addLayout(self.l_line)
         self.h_line.addLayout(self.r_line)
@@ -30,6 +32,6 @@ class TestWin(QWidget):
     def connects(self):
         pass
         
-app = QApplication([])
-mw = TestWin()
-app.exec()
+# app = QApplication([])
+# mw = TestWin()
+# app.exec()
